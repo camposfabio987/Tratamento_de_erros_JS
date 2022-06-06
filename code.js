@@ -43,12 +43,24 @@ function clickNumberButton() {
 
     try{    
         if(numb == ''){
-         throw "Informe um valor"
+         throw 'Informe um valor'
+        }
+
+        if(numb < 5 || numb > 10 ) { 
+         throw 'Informe um valor maior que 5 e menor que 10' 
         }
     }
 
-    catch(erro){
-     alert(erro)
-       
+    catch(error){
+    
+      if(error != 'Informe um valor' && error != 'Informe um valor maior que 5 e menor que 10'){
+        error = 'erro + erro javascript'
+      }
+      
+      alert(error)
+    }
+
+    finally{
+        alert("O número escolhido foi " + numb)
     }
 }
