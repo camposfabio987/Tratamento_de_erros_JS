@@ -41,26 +41,23 @@ function clickFileButton() {
 function clickNumberButton() {
     numb = document.getElementById("inputnumber").value
 
-    try{    
-        if(numb == ''){
-         throw 'Informe um valor'
+    try {
+        if (numb == '') {
+            throw 'Informe um valor'
         }
 
-        if(numb < 5 || numb > 10 ) { 
-         throw 'Informe um valor maior que 5 e menor que 10' 
+        if (numb <= 5 || numb >= 10) {
+            throw 'Informe um valor maior que 5 e menor que 10'
         }
     }
 
-    catch(error){
-    
-      if(error != 'Informe um valor' && error != 'Informe um valor maior que 5 e menor que 10'){
-        error = 'erro + erro javascript'
-      }
-      
-      alert(error)
+    catch (error) {
+
+        console.log("Erro " + error)
+        alert(error)
     }
 
-    finally{
+    finally {
         alert("O número escolhido foi " + numb)
     }
 }
